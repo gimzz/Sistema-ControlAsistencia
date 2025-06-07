@@ -1,10 +1,10 @@
 import com.miempresa.gestionasistencia.model.Asistencia;
 import java.util.List;
 
-public class AsistenciaDAO {
-    boolean AgregarAsistencia(Asistencia);
-    Asistencia ObtenerAsistenciaPorId(int id);
-    List<Asistencia> obtenerAsistenciasporUsuario(int usuarioId);
+public interface AsistenciaDAO {
+    boolean agregarAsistencia(Asistencia asistencia);
+    Asistencia obtenerAsistenciaPorId(int id);
+    List<Asistencia> obtenerAsistenciasPorUsuario(int usuarioId);
     List<Asistencia> obtenerTodasAsistencias();
     boolean actualizarAsistencia(Asistencia asistencia);
     boolean eliminarAsistencia(int id);
