@@ -1,15 +1,16 @@
 import java.util.Date;
+import com.miempresa.gestionasistencia.enums.EstadoAsistencia;
 
 public class Asistencia {
     private int id;
     private int usuarioId;
     private Date date;
-    private String estado;
+    private EstadoAsistencia estado;
 
     public Asistencia() {
     }
 
-    public Asistencia(int id, int usuarioId, Date date, String estado) {
+    public Asistencia(int id, int usuarioId, Date date, EstadoAsistencia estado) {
         this.id = id;
         this.usuarioId = usuarioId;
         this.date = date;
@@ -40,11 +41,11 @@ public class Asistencia {
         this.date = date;
     }
 
-    public String getEstado() {
+    public EstadoAsistencia getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(EstadoAsistencia estado) {
         this.estado = estado;
     }
 }
