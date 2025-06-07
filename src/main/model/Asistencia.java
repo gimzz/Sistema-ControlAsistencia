@@ -1,43 +1,49 @@
+import java.util.Date;
+
 public class Asistencia {
     private int id;
-    private int usuario_id;
+    private int usuarioId;
     private Date date;
     private String estado;
 
-
-    public class Asistencia(){
-
+    public Asistencia() {
     }
 
-    public class Asistencia(int id, int usuario_id, Date date, String estado){
-        this.id=id;
-        this.usuario_id=usuario_id;
-        this.date=date;
-        this.estado=estado;
-
+    public Asistencia(int id, int usuarioId, Date date, String estado) {
+        this.id = id;
+        this.usuarioId = usuarioId;
+        this.date = date;
+        this.estado = estado;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
-    public void setId(int id){
-        this.id;
+
+    public void setId(int id) {
+        this.id = id;
     }
-     public int getUsuarioId() {
-        return usuario_id;
+
+    public int getUsuarioId() {
+        return usuarioId;
     }
-    public void setUsuario_id(int usuario_id) {
-        this.usuario_id = usuario_id;
+
+    public void setUsuarioId(int usuarioId) {
+        this.usuarioId = usuarioId;
     }
+
     public Date getDate() {
         return date;
     }
-    public void setDate(Date fecha) {
+
+    public void setDate(Date date) {
         this.date = date;
     }
+
     public String getEstado() {
         return estado;
     }
+
     public void setEstado(String estado) {
         this.estado = estado;
     }
