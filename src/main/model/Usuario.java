@@ -1,14 +1,16 @@
+import com.miempresa.gestionasistencia.enums.RolUsuario;
+
 public class Usuario {
     private int id;
     private String nombre;
     private String usuario;
     private String password;
-    private String rol;
+    private RolUsuario rol;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre, String usuario, String password, String rol) {
+    public Usuario(int id, String nombre, String usuario, String password, RolUsuario rol) {
         this.id = id;
         this.nombre = nombre;
         this.usuario = usuario;
@@ -48,11 +50,11 @@ public class Usuario {
         this.password = password;
     }
 
-    public String getRol() {
+    public RolUsuario getRol() {
         return rol;
     }
 
-    public void setRol(String rol) {
+    public void setRol(RolUsuario rol) {
         this.rol = rol;
     }
 }
