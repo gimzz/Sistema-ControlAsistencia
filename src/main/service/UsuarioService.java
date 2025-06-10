@@ -33,6 +33,23 @@ public class UsuarioService {
     
     } 
     
+    public List<Usuario> obtenerTodosUsuarios(){
+        return usuarioDAO.obtenerTodosUsuarios();
+    }
+    
+    public boolean actualizarUsuario(Usuario usuario){
+    if(usuario.getNombre()==null || usuario.getNombre().isEmpty()){
+     throw new IllegalArgumentException("ERROR PARA ACTUALIZAR");
+
+    }
+        try {
+         return usuarioDAO.actualizarUsuario(usuario);
+        } catch(Exception e){
+        e.printStackTrace();
+        return false;
+        }
+    
+    }
 
     
 }
