@@ -9,15 +9,30 @@ import java.util.List;
 import jdk.internal.classfile.instruction.ThrowInstruction;
 
 public class UsuarioService {
-    private UsuarioDAO = new UsuarioDAOImpl();
+    private UsuarioDAO usuarioDAO = new UsuarioDAOImpl();
 
 
     public boolean registrarUsuario(Usuario usuario){
-        if (usuario.getNombre()== null || usuario.get.Nombre().isEmpty()) {
+        if (usuario.getNombre()== null || usuario.getNombre().isEmpty()) {
             throw new IllegalArgumentException("FALLO AL REGISTRAR USUARIO");
             
         }
         return UsuarioDAO.agregarUsuario(usuario);
     }
+    
+    public Usuario obtenerUsuarioPorId(int id){
+        return usuarioDAO.obtenerUsuarioPorId(int id);
+    }
+    
+    public Usuario obtenerUsuarioPorNombre(String nombre){
+    if(nombre==null || nombre.isEmpty()){
+        throw new IllegalArgumentException("NO HAY REGISTROS");
+    }
+    return usuarioDAO.obtenerUsuarioPorNombre(nombre);
+
+    
+    } 
+    
+
     
 }
