@@ -19,7 +19,7 @@ public class AsistenciaDAOImpl implements AsistenciaDAO {
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, asistencia.getUsuarioId());
             ps.setDate(2, new java.sql.Date(asistencia.getDate().getTime()));
-            ps.setString(3, asistencia.getEstado().name()); // enum a String
+            ps.setString(3, asistencia.getEstado().name());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
