@@ -16,7 +16,7 @@ public class AsistenciaDAOImpl implements AsistenciaDAO {
     public boolean agregarAsistencia(Asistencia asistencia) {
         String sql = "INSERT INTO asistencias (usuarioid, fecha, estado) VALUES (?, ?, ?)";
         try (Connection conn = ConexionBD.obtenerConexion();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, asistencia.getUsuarioId());
             ps.setDate(2, new java.sql.Date(asistencia.getDate().getTime()));
             ps.setString(3, asistencia.getEstado().name());
@@ -31,7 +31,7 @@ public class AsistenciaDAOImpl implements AsistenciaDAO {
     public Asistencia obtenerAsistenciaPorId(int id) {
         String sql = "SELECT * FROM asistencias WHERE id = ?";
         try (Connection conn = ConexionBD.obtenerConexion();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -53,7 +53,7 @@ public class AsistenciaDAOImpl implements AsistenciaDAO {
         List<Asistencia> listaasistencias = new ArrayList<>();
         String sql = "SELECT * FROM asistencias";
         try (Connection conn = ConexionBD.obtenerConexion();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Asistencia asistencia = new Asistencia();
@@ -73,7 +73,7 @@ public class AsistenciaDAOImpl implements AsistenciaDAO {
     public boolean actualizarAsistencia(Asistencia asistencia) {
         String sql = "UPDATE asistencias SET usuarioid = ?, fecha = ?, estado = ? WHERE id = ?";
         try (Connection conn = ConexionBD.obtenerConexion();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, asistencia.getUsuarioId());
             ps.setDate(2, new java.sql.Date(asistencia.getDate().getTime()));
             ps.setString(3, asistencia.getEstado().name());
@@ -90,7 +90,7 @@ public class AsistenciaDAOImpl implements AsistenciaDAO {
     public boolean eliminarAsistencia(int id) {
         String sql = "DELETE FROM asistencias WHERE id = ?";
         try (Connection conn = ConexionBD.obtenerConexion();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -105,7 +105,7 @@ public class AsistenciaDAOImpl implements AsistenciaDAO {
         List<Asistencia> lista = new ArrayList<>();
         String sql = "SELECT * FROM asistencias WHERE usuarioid = ?";
         try (Connection conn = ConexionBD.obtenerConexion();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, usuarioId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

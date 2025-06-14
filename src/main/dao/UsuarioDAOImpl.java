@@ -20,7 +20,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             ps.setString(1, usuario.getNombre());
             ps.setString(2, usuario.getUsuario());
             ps.setString(3, usuario.getPassword());
-            ps.setString(4, usuario.getRol().name()); // Convertir enum a String
+            ps.setString(4, usuario.getRol().name()); 
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
